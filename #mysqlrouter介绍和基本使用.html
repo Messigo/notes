@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>mysqlrouter&#x4ecb;&#x7ecd;&#x548c;&#x57fa;&#x672c;&#x4f7f;&#x7528;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="mysqlrouter介绍和基本使用">mysqlrouter介绍和基本使用</h1>
+<h2 id="1mysqlrouter是什么">1.mysqlrouter是什么</h2>
+<p>APP与数据库中间的一个轻量级的中间件（可理解为代理），即APP只访问mysqlrouter即可，不用理会数据库集群的拓扑变化</p>
+<p><img src="file:///c:\Users\admin\Desktop\C:%5CUsers%5Cadmin%5CDesktop%5Cmysqlrouter_offiial.png%221%22" alt="mysqlrouter中间件"></p>
+<h2 id="2mysqlrouter怎么使用">2.mysqlrouter怎么使用</h2>
+<h3 id="21下载">2.1.下载</h3>
+<h3 id="22安装">2.2.安装</h3>
+<h3 id="23配置">2.3.配置</h3>
+<h3 id="24实验">2.4.实验</h3>
+<h3 id="25抓包">2.5.抓包</h3>
+<h2 id="3mysqlrouter的优点">3.mysqlrouter的优点</h2>
+<h3 id="31官方发布亲儿子">3.1.官方发布（亲儿子）</h3>
+<h3 id="32轻量级使用配置简单">3.2.轻量级（使用配置简单）</h3>
+<h2 id="4mysqlrouter的缺点">4.mysqlrouter的缺点</h2>
+<h2 id="5疑问和补充">5.疑问和补充</h2>
+<h2 id="6reference">6.Reference</h2>
+<p>1.<a href="https://markdown.com.cn/basic-syntax">Markdown基本语法</a>
+2.<a href="https://dev.mysql.com/doc/mysql-router/8.0/en/">mysqlrouter官方文档</a>
+3.<a href="https://mariadb.com/kb/en/what-is-mariadb-galera-cluster/">galera-cluster</a>
+4.<a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-innodb-cluster.html">InnoDB cluster</a>
+5.<a href="https://dev.mysql.com/doc/refman/8.3/en/mysql-cluster.html">MySQL NDB Cluster</a></p>
+
+            
+            
+        </body>
+        </html>
